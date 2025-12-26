@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Palette Generator</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>🎨 Palette Generator</h1>
+    <button id="theme-toggle">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <div class="controls">
+    <select id="mode">
+      <option value="random">Random</option>
+      <option value="pastel">Pastel</option>
+      <option value="vibrant">Vibrant</option>
+    </select>
+
+    <button id="generate-btn">
+      <i class="fas fa-sync-alt"></i> Generate
+    </button>
+
+    <button id="export-btn">
+      <i class="fas fa-code"></i> Export CSS
+    </button>
+  </div>
+
+  <div class="palette-container">
+    <div class="color-box" data-locked="false">
+      <div class="color"></div>
+      <div class="color-info">
+        <span class="hex-value">#FFFFFF</span>
+        <div class="icons">
+          <i class="fas fa-lock lock-btn"></i>
+          <i class="far fa-copy copy-btn"></i>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      for(let i=0;i<4;i++){
+        document.write(document.querySelector(".color-box").outerHTML);
+      }
+    </script>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
